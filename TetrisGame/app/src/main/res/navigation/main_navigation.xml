@@ -1,0 +1,88 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:startDestination="@id/titleFragment"
+    tools:context=".MainActivity">
+
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="nl.natalya.tetrisgame.screens.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="nl.natalya.tetrisgame.screens.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment"
+            app:destination="@id/gameWonFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="nl.natalya.tetrisgame.screens.GameOverFragment"
+        android:label="GameOverFragment"
+        tools:layout="@layout/fragment_game_over">
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="numberOfShapesInGame"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="nl.natalya.tetrisgame.screens.GameWonFragment"
+        android:label="GameWonFragment"
+        tools:layout="@layout/fragment_game_won">
+        <action
+            android:id="@+id/action_gameWonFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="numberOfShapesInGame"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_gameWonFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="nl.natalya.tetrisgame.screens.ScoreFragment"
+        android:label="ScoreFragment"
+        tools:layout="@layout/fragment_score">
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="numberOfShapesInGame"
+            app:argType="integer" />
+    </fragment>
+</navigation>

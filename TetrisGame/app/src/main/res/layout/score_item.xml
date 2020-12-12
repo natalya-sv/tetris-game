@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/scoreTableStyle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/score"
+        style="@style/scoreTableStyle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/nrOfShapes"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Shapes:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score"
+       style="@style/scoreTableStyle"
+        />
+
+    <TextView
+        android:id="@+id/dateScore"
+        style="@style/scoreTableValuesStyle"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/date_example"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lastScore"
+        style="@style/scoreTableValuesStyle"
+        android:layout_marginTop="20dp"
+        android:text="@string/start_score_value"
+        app:layout_constraintStart_toStartOf="@+id/dateScore"
+        app:layout_constraintTop_toBottomOf="@+id/dateScore" />
+
+    <TextView
+        android:id="@+id/shapesValue"
+        style="@style/scoreTableValuesStyle"
+        android:layout_marginTop="16dp"
+        android:text="@string/shapes_value"
+        app:layout_constraintStart_toStartOf="@+id/lastScore"
+        app:layout_constraintTop_toBottomOf="@id/lastScore"
+        />
+
+    <View
+        style="@style/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="20dp"
+        android:outlineSpotShadowColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nrOfShapes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
