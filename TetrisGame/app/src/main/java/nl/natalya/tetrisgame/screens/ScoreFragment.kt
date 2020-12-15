@@ -63,7 +63,7 @@ class ScoreFragment : Fragment() {
 
         if (listSize > 0) {
             for (previousScore in listOfPreviousScores) {
-                //to avoid that the score is written again when the user navigates back and forward
+                //write the score once
                 if (latestScore == previousScore.score && previousScore.date == LocalDateTime.now().format(timeFormatter).toString()) {
                     scoreToAdd = 0
                     break
@@ -81,6 +81,7 @@ class ScoreFragment : Fragment() {
             val lastScore = LastScore(0, LocalDateTime.now().format(timeFormatter).toString(), latestScore, shapes)
             scoreViewModel.insert(lastScore)
 
+            //keep 10 scores in the db, remove the lowest if there are more than 10
             if (listSize == 10) {
                 deleteTheLowestScore()
             }

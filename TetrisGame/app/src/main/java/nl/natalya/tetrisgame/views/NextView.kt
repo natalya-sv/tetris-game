@@ -31,11 +31,11 @@ class NextView(context: Context, attr: AttributeSet) : View(context, attr) {
 
     fun setNextFigure(shapes: MutableList<Shape>) {
         arrayOfNext.clear()
-        for (s in shapes) {
+        for (shape in shapes) {
             val nextShape = Shape()
-            nextShape.currentShapeType = s.currentShapeType
-            nextShape.shapeArray = s.shapeArray
-            nextShape.shapeColor = s.shapeColor
+            nextShape.currentShapeType = shape.currentShapeType
+            nextShape.shapeArray = shape.shapeArray
+            nextShape.shapeColor = shape.shapeColor
 
             arrayOfNext.add(nextShape)
         }
@@ -57,6 +57,7 @@ class NextView(context: Context, attr: AttributeSet) : View(context, attr) {
         return figureColor
     }
 
+    //draws 3 next figures
     @SuppressLint("DrawAllocation")
     override fun onDraw(nextViewCanvas: Canvas?) {
         super.onDraw(nextViewCanvas)

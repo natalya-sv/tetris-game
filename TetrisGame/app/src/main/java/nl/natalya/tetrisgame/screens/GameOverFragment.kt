@@ -17,7 +17,7 @@ class GameOverFragment : Fragment() {
     private lateinit var binding: FragmentGameOverBinding
     private val gameViewModel: GameViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_over, container, false)
 

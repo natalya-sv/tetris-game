@@ -16,7 +16,7 @@ class GameWonFragment : Fragment() {
 
     private lateinit var binding: FragmentGameWonBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_won, container, false)
 

@@ -22,7 +22,7 @@ class GameFragment : Fragment() {
     val handler = Handler(Looper.getMainLooper())
     private val gameViewModel: GameViewModel by activityViewModels()
     var gamePaused = false
-    private var gameSpeed = 500
+    private var gameSpeed = 800
     private var gameLevel = 1
     private var gameNextLevelScore = 30
     private val speedChange = 100

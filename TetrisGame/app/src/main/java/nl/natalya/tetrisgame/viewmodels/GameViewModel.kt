@@ -19,7 +19,6 @@ class GameViewModel : ViewModel() {
     val nrOfShapes: LiveData<Int>
     get() = _nrOfShapes
 
-
     private var _nextShape = MutableLiveData<MutableList<Shape>>()
     val nextShape: LiveData<MutableList<Shape>>
     get() = _nextShape

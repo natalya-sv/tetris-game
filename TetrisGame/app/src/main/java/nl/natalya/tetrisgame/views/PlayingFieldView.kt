@@ -271,7 +271,7 @@ class PlayingFieldView(context: Context, attr: AttributeSet) : View(context, att
 
     }
 
-    //finally counts score when removing and moving figure moved down
+    //finally counts the score
     private fun countPoints() {
         val handler = Handler(Looper.getMainLooper())
         checkLinesToRemove()
